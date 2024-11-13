@@ -50,7 +50,7 @@ def main():
         img_size = img.pixel_array.shape
         img_size = np.asarray(img_size).astype(float)
 
-        image = dicom_image.pixel_array
+        image = img.pixel_array
         image = image.astype(float)
         image = (image-image.min())/(image.max()-image.min())*255.0
         image = image.astype(np.uint8)
