@@ -25,8 +25,8 @@ from sam2.sam2_image_predictor import SAM2ImagePredictor
 
 def main():
 
-    sam2_checkpoint = "//trinity/home/r094879/repositories/sam2/checkpoints/sam2.1_hiera_large.pt"
-    model_cfg = "//trinity/home/r094879/repositories/sam2/sam2/configs/sam2.1/sam2.1_hiera_l.yaml"
+    sam2_checkpoint = "//trinity/home/r094879/repositories/SAM2_vertebra_segmentation/checkpoints/sam2.1_hiera_large.pt"
+    model_cfg = "//trinity/home/r094879/repositories/SAM2_vertebra_segmentation/sam2/configs/sam2.1/sam2.1_hiera_l.yaml"
     
     sam2_model = build_sam2(model_cfg, sam2_checkpoint)
 
