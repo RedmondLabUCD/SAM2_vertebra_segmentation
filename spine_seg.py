@@ -57,6 +57,8 @@ def main():
         image = (image-image.min())/(image.max()-image.min())*255.0
         image = image.astype(np.uint8)
         image = Image.fromarray(image)
+        image = image.convert(mode='RGB')
+        image = np.asarray(image)
 
         print(image.shape)
 
