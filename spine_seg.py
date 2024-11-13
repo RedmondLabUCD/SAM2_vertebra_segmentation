@@ -54,6 +54,9 @@ def main():
         image = image.astype(float)
         image = (image-image.min())/(image.max()-image.min())*255.0
         image = image.astype(np.uint8)
+        image = Image.fromarray(image)
+
+        print(image.shape)
 
         x_values = row.iloc[3:29:2].values 
         y_values = row.iloc[4:29:2].values
