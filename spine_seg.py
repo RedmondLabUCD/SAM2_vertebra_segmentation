@@ -50,13 +50,18 @@ def main():
         img_size = img.pixel_array.shape
         img_size = np.asarray(img_size).astype(float)
 
+        image = dicom_image.pixel_array
+        image = image.astype(float)
+        image = (image-image.min())/(image.max()-image.min())*255.0
+        image = image.astype(np.uint8)
+
         x_values = row.iloc[3:29:2].values 
         y_values = row.iloc[4:29:2].values
 
         # Combine x and y values and filter out NaN pairs
         xy_pairs = np.array(list(zip(x_values, y_values)))
 
-        predictor.set_image(img.pixel_array)
+        predictor.set_image(image)
 
         masks, scores, _ = predictor.predict(
             point_coords=xy_pairs,
