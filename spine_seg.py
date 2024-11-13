@@ -72,8 +72,6 @@ def main():
 
         for i in range(len(xy_pairs)):
             labels.append(1)
-
-        print(labels)
         
         predictor.set_image(image)
 
@@ -84,7 +82,7 @@ def main():
             multimask_output=False,
         )
 
-        mask_sum = masks[0,0,:,:]
+        mask_sum = masks[0,:,:]
         for mask in masks:
             mask_sum += mask
 
