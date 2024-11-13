@@ -56,6 +56,8 @@ def main():
         # Combine x and y values and filter out NaN pairs
         xy_pairs = np.array(list(zip(x_values, y_values)))
 
+        predictor.set_image(img.pixel_array)
+
         masks, scores, _ = predictor.predict(
             point_coords=xy_pairs,
             point_labels=None,
