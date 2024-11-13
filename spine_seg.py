@@ -11,6 +11,8 @@ from sklearn.model_selection import KFold
 import shutil
 from glob import glob
 import gc
+from PIL import Image
+import PIL
 
 import torch
 import torch.nn as nn
