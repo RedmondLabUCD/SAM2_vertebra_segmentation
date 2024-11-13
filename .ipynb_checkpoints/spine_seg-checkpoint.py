@@ -19,18 +19,8 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader, ConcatDataset, random_split, Subset
 from torchvision import datasets, transforms, models
 
-import models
-from utils.earlystopping import EarlyStopping
-from utils import datasets
-from torchvision.datasets.utils import list_files
-from utils.params import Params
-from utils.plotting import plot_training
-from utils.train_progress_tools import run_train_generator, track_running_average_loss, monitor_progress
-import utils.eval_metrics as e_metric
-from utils.data_prep import final_mean_and_std
 from sam2.build_sam import build_sam2
 from sam2.sam2_image_predictor import SAM2ImagePredictor
-
 
 
 def main():
