@@ -67,12 +67,19 @@ def main():
 
         # Combine x and y values and filter out NaN pairs
         xy_pairs = np.array(list(zip(x_values, y_values)))
+        xy_pairs = xy_pairs[~np.isnan(xy_pairs).any(axis=1)]
+        labels = []
 
+        for i in range(len(xy_pairs)):
+            labels.append(1)
+
+        print(labels)
+        
         predictor.set_image(image)
 
         masks, scores, _ = predictor.predict(
             point_coords=xy_pairs,
-            point_labels=None,
+            point_labels=labels,
             box=None,
             multimask_output=False,
         )
